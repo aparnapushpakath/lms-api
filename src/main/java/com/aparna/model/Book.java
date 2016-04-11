@@ -1,4 +1,4 @@
-package entities;
+package com.aparna.model;
 
 public class Book {
 private String title;

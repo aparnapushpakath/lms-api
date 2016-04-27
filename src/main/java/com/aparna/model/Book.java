@@ -1,6 +1,13 @@
 package com.aparna.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Book")
 public class Book {
+	
 private String title;
 
 public Book(String title, String author, String isdn){
@@ -8,6 +15,10 @@ public Book(String title, String author, String isdn){
 	this.author=author;
 	this.isdn=isdn;
 }
+Book(){
+	
+}
+
 
 @Override
 public String toString() {
@@ -33,5 +44,6 @@ public void setIsdn(String isdn) {
 	this.isdn = isdn;
 }
 private String author;
+@Id
 private String isdn;
 }

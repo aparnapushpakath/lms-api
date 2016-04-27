@@ -16,6 +16,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
        <props>
          <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
          <prop key="hibernate.show_sql">true</prop>
+        <!--  <prop key="hibernate.hbm2ddl.auto">create</prop> -->
        </props>
      </property>
     	
@@ -27,6 +28,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		<property name="annotatedClasses">
 			<list>
 				<value>com.aparna.model.User</value>
+				<value>com.aparna.model.Book</value>
 			</list>
 		</property>
 		
@@ -35,7 +37,9 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean id="userDAO" class="com.aparna.dao.UserDAOImpl">
 		<property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" />
 	</bean>
-
+<bean id="bookDao" class="com.aparna.dao.BookDaoImpl">
+		<property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" />
+	</bean>
 	<bean id="txManager"  
   class="org.springframework.orm.hibernate3.HibernateTransactionManager">  
   <property name="sessionFactory" ref="sessionFactory" />  

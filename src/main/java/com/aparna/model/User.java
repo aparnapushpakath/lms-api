@@ -11,6 +11,10 @@ import javax.persistence.Table;
 @Table(name="User")
 public class User {
 	
+@Override
+	public String toString() {
+		return "User [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", phone=" + phone + "]";
+	}
 @Id
 @Column(name="id")
 @GeneratedValue(strategy=GenerationType.IDENTITY)
